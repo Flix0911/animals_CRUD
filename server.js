@@ -34,10 +34,13 @@ app.use(express.urlencoded({ extended: true}))
 //method-override - allow access to DELETE and PUT
 app.use(methodOverride("_method"))
 
+//add styles.css
+app.use("/public", express.static("public"))
+
 //--------------------------------------------
 //routes
 
-//INDEX - GET
+//INDEX - GET - Brings to index page
 app.get("/animals", async (req, res) => {
     //find all animals in db
     let animals = await Animal.find({})
@@ -45,13 +48,33 @@ app.get("/animals", async (req, res) => {
     res.render("index.ejs", {animals})
 })
 
-//NEW - GET
+//NEW - GET - Brings to the form to make a NEW animal
+app.get("/animals/new", (req, res) => {
+    //bring the user to the new.ejs page to make a NEW animal
+    res.render("new.ejs")
+})
+
 
 //DELETE - DELETE
 
 //UPDATE - PUT
 
-//CREATE - POST
+//CREATE - POST - Return back to Index with the newly created animal
+app.post("/animals", async (req, res) => {
+    try {
+        if (req.body.completed === "on") {
+            //if checked
+            req.body.completed = true
+        } else {
+            //if not checked
+            req.body.completed = false
+        }
+        let discoveredAnimal = await Animal.create(req.body)
+        res.redirect("/animals")
+    } catch (err) {
+        res.send(err)
+    }
+})
 
 //EDIT - GET
 

@@ -4,6 +4,14 @@
 
 <body>
     <%- include("./partials/nav.ejs") %>
-    
+    <h1>Golly, you've discovered a new Animal, let us log it in our records!</h1>
+
+        <form action="/animals" method="post">
+            Species: <input type="text" name="species">
+            Location: <input type="text" name="location">
+            Life Expectancy: <input type="number" name="lifeExpectancy">
+            Extinct: <input type="checkbox" name="extinct">
+            <input type="submit" value="Log your discovery">
+        </form>
 </body>
 </html>
