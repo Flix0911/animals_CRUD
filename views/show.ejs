@@ -10,5 +10,6 @@
         <li>Typical life expectancy: <%= animal.lifeExpectancy %> years</li>
         <li><%= animal.extinct ? "Alas, it is no more" : "Phew, it's still around" %></li>
     </ul>
+    <a href="/animals/edit/<%= animal._id %>">Do you have updates on the <%= animal.species %>?</a>
 </body>
 </html>

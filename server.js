@@ -69,7 +69,27 @@ app.delete("/animals/:id", async (req, res) => {
     }
 })
 
-//UPDATE - PUT
+//UPDATE - PUT - Return updated notes to the ._id indicated
+app.put("/animals/:id", async (req, res) => {
+    try {
+        if (req.body.extinct === "on") {
+            //if checked, as per below
+            req.body.extinct = true
+        } else {
+            //if not checked
+            req.body.extinct = false
+        }
+        //find by id and update the req.body
+        let updatedAnimal = await Animal.findByIdAndUpdate(req.params.id, req.body, {
+            new: true
+        }
+    )
+    //redirect to show.ejs
+    res.redirect(`/animals/${updatedAnimal._id}`)
+    } catch (err) {
+        res.send(err)
+    }
+})
 
 //CREATE - POST - Return back to Index with the newly created animal
 app.post("/animals", async (req, res) => {
@@ -88,7 +108,17 @@ app.post("/animals", async (req, res) => {
     }
 })
 
-//EDIT - GET
+//EDIT - GET - Bring to edit.ejs from show.ejs by a button
+app.get("/animals/edit/:id", async (req, res) => {
+    try {
+        //find the animal by ID and edit
+        let foundAnimal = await Animal.findById(req.params.id)
+        //send to edit.ejs
+        res.render("edit.ejs", {animal: foundAnimal})
+    } catch (error) {
+        res.send("somethin ain't right")
+    }
+})
 
 //SHOW - GET - Bring to show.ejs from the animal I clicked on by ID
 app.get("/animals/:id", async (req, res) => {
