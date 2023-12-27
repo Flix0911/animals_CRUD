@@ -4,7 +4,8 @@
 
 <body>
     <%- include("./partials/nav.ejs") %>
-    <h1>Let us learn about the <%= animal.species %>, it is most curious</h1>
+    <h1>Let us learn more about the <%= animal.species %>, it is most curious...</h1>
+    <h2><img src="<%= animal.imageLink %>"></h3>
     <ul>
         <li>Location: <%= animal.location %></li>
         <li>Typical life expectancy: <%= animal.lifeExpectancy %> years</li>

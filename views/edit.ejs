@@ -13,7 +13,7 @@
         Species: <input type="text" name="species" value="<%= animal.species %>">
         Location: <input type="text" name="location" value="<%= animal.location %>">
         Life Expectancy: <input type="number" name="lifeExpectancy" value="<%= animal.lifeExpectancy %>">
-        Extinct: <input type="checkbox" name="extinct" <% animal.extinct ? checked: null %>>
+        Extinct: <input type="checkbox" name="extinct" <%= animal.extinct ? 'checked': '' %>>
         <input type="submit" value="Update Animal">
     </form>
     

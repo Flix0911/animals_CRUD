@@ -9,6 +9,7 @@
     <% for(let i = 0; i < animals.length; i++) { %>
         <li><a href="/animals/<%= animals[i]._id %>">
             <%= animals[i].species %></li></a>
+            <a><img src="<%= animals[i].imageLink %>"></a>
         <form action="/animals/<%= animals[i]._id %>/?_method=DELETE" method="post">
             <input type="submit" value="Delete Animal">
         </form>
