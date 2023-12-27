@@ -37,6 +37,26 @@ app.use(methodOverride("_method"))
 //--------------------------------------------
 //routes
 
+//INDEX - GET
+app.get("/animals", async (req, res) => {
+    //find all animals in db
+    let animals = await Animal.find({})
+    //render all of animals to index.ejs
+    res.render("index.ejs", {animals})
+})
+
+//NEW - GET
+
+//DELETE - DELETE
+
+//UPDATE - PUT
+
+//CREATE - POST
+
+//EDIT - GET
+
+//SHOW - GET
+
 //--------------------------------------------
 //server listener
 app.listen(PORT, () => console.log(`Running on ${PORT}`))
