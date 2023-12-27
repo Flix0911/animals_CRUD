@@ -4,7 +4,11 @@
 
 <body>
     <%- include("./partials/nav.ejs") %>
-    
-    
+    <h1>Let us learn about the <%= animal.species %>, it is most curious</h1>
+    <ul>
+        <li>Location: <%= animal.location %></li>
+        <li>Typical life expectancy: <%= animal.lifeExpectancy %> years</li>
+        <li><%= animal.extinct ? "Alas, it is no more" : "Phew, it's still around" %></li>
+    </ul>
 </body>
 </html>

@@ -8,7 +8,7 @@ const animalsSchema = new mongoose.Schema ({
     species: { type: String, required: true },
     location: { type: String, required: true},
     lifeExpectancy: { type: Number, required: true },
-    extinct: { type: Boolean, default: false }
+    extinct: Boolean
 })
 
 //create variable to then export

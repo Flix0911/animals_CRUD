@@ -7,7 +7,11 @@
     <h1>Welcome to the great Animal Kingdom!</h1>
 
     <% for(let i = 0; i < animals.length; i++) { %>
-        <li><%= animals[i].species %>
+        <li><a href="/animals/<%= animals[i]._id %>">
+            <%= animals[i].species %></li></a>
+        <form action="/animals/<%= animals[i]._id %>/?_method=DELETE" method="post">
+            <input type="submit" value="Delete Animal">
+        </form>
 
     <% } %>
     

@@ -55,19 +55,31 @@ app.get("/animals/new", (req, res) => {
 })
 
 
-//DELETE - DELETE
+//DELETE - DELETE - Remove the animal that was clicked to remove
+app.delete("/animals/:id", async (req, res) => {
+    try {
+        //find the animal and then delete
+        let deletedAnimal = await Animal.findByIdAndDelete(req.params.id)
+        //show as this occurs
+        console.log(deletedAnimal)
+        //redirect to index
+        res.redirect("/animals")
+    } catch (error) {
+        res.status(500).send("The animal won't delete")
+    }
+})
 
 //UPDATE - PUT
 
 //CREATE - POST - Return back to Index with the newly created animal
 app.post("/animals", async (req, res) => {
     try {
-        if (req.body.completed === "on") {
+        if (req.body.extinct === "on") {
             //if checked
-            req.body.completed = true
+            req.body.extinct = true
         } else {
             //if not checked
-            req.body.completed = false
+            req.body.extinct = false
         }
         let discoveredAnimal = await Animal.create(req.body)
         res.redirect("/animals")
@@ -78,8 +90,15 @@ app.post("/animals", async (req, res) => {
 
 //EDIT - GET
 
-//SHOW - GET
-
+//SHOW - GET - Bring to show.ejs from the animal I clicked on by ID
+app.get("/animals/:id", async (req, res) => {
+    //find the animal by the _id
+    let foundAnimal = await Animal.findById(req.params.id)
+    //log as we move to the page
+    console.log(foundAnimal)
+    //bring to show.ejs
+    res.render("show.ejs", {animal: foundAnimal})
+})
 //--------------------------------------------
 //server listener
 app.listen(PORT, () => console.log(`Running on ${PORT}`))
