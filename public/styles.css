@@ -1,3 +1,73 @@
-h1 {
-    color: red;
+/* Index page - will note overlap when needed */
+
+.index /* COMPLETE */ {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    border: 5px solid rgb(3, 112, 3);
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.instructions /* COMPLETE */ {
+    text-align: center;
+    font-weight: bold;
+}
+
+body /* body will overlap on all pages */ {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3efe8; 
+    color: #333; 
+}
+
+.animal-container /* COMPLETE */ {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.animal {
+    background-color: #c5d9c0; 
+    margin: 10px;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.animal-name /* RETURN TO LATER */ {
+    color: #010300; 
+    text-decoration: underline;
+    justify-content: center;
+    align-items: center;
+}
+
+.animal-image /* COMPLETE */  {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cta /* COMPLETE */{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="submit"] /* COMPLETE */ {
+    background-color: #6b5e4d; 
+    color: #fff; 
+    padding: 8px 15px;
+    border: 4px solid rgb(3, 112, 3);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover /* COMPLETE */ {
+    background-color: #9d5e12; 
 }

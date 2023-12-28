@@ -4,17 +4,22 @@
 
 <body>
     <%- include("./partials/nav.ejs") %>
-    <h1>Welcome to the great Animal Kingdom!</h1>
+    <h1 class="index">Welcome to the great Animal Kingdom!</h1>
+    <p class="instructions">Click the animal name to learn more!</a>
 
-    <% for(let i = 0; i < animals.length; i++) { %>
-        <li><a href="/animals/<%= animals[i]._id %>">
-            <%= animals[i].species %></li></a>
-            <a><img src="<%= animals[i].imageLink %>"></a>
-        <form action="/animals/<%= animals[i]._id %>/?_method=DELETE" method="post">
-            <input type="submit" value="Delete Animal">
-        </form>
-
-    <% } %>
-    
+    <div class="animal-container">
+        <% for(let i = 0; i < animals.length; i++) { %>
+            <div class="animal">
+                <li><a href="/animals/<%= animals[i]._id %>" class="animal-name">
+                    <%= animals[i].species %></li></a>
+                    <a><img src="<%= animals[i].imageLink %>" class="animal-image"></a>
+                    <div class="cta">
+                        <form action="/animals/<%= animals[i]._id %>/?_method=DELETE" method="post" id="deleteform">
+                        <input type="submit" value="Delete Animal">
+                    </div>
+                </form>
+            </div>
+            <% } %>
+    </div>
 </body>
 </html>
