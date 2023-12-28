@@ -4,14 +4,16 @@
 
 <body>
     <%- include("./partials/nav.ejs") %>
-    <h1>Golly, you've discovered a new Animal, let us log it in our records!</h1>
+    <h1 class="new">Golly, you've discovered a new Animal, let us log it in our records!</h1>
 
-        <form action="/animals" method="post">
-            Species: <input type="text" name="species">
-            Location: <input type="text" name="location">
-            Life Expectancy: <input type="number" name="lifeExpectancy">
-            Extinct: <input type="checkbox" name="extinct" value="true">
-            Image Link: <input type="text" name="imageLink">
+    <p class="new-instructions">Fill in below to catalog!</a>
+
+        <form action="/animals" method="post" class="cta-new">
+            Species: <input type="text" name="species"><br>
+            Location: <input type="text" name="location"><br>
+            Life Expectancy: <input type="number" name="lifeExpectancy"><br>
+            Extinct: <input type="checkbox" name="extinct" value="true"><br>
+            Image Link: <input type="text" name="imageLink"><br>
             <input type="submit" value="Log your discovery">
         </form>
 </body>

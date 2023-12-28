@@ -38,11 +38,16 @@ body /* body will overlap on all pages */ {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.animal-name /* RETURN TO LATER */ {
+.animal-name /* COMPLETE */ {
     color: #010300; 
     text-decoration: underline;
     justify-content: center;
     align-items: center;
+}
+
+.animal li /* COMPLETE */ {
+    margin-right: 40px;
+    list-style-type: square;
 }
 
 .animal-image /* COMPLETE */  {
@@ -52,7 +57,7 @@ body /* body will overlap on all pages */ {
     border-radius: 8px;
 }
 
-.cta /* COMPLETE */{
+.cta /* COMPLETE */ {
     margin-top: 10px;
     display: flex;
     align-items: center;
@@ -123,4 +128,68 @@ input[type="submit"]:hover /* COMPLETE */ {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* EDIT */
+
+.edit /* COMPLETE */ {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    border: 5px solid rgb(3, 112, 3);
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-container /* COMPLETE */ {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-container input /* COMPLETE */ {
+    text-align: center;
+}
+
+.edit-instructions /* COMPLETE */ {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* NEW */
+
+.new /* COMPLETE */ {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    border: 5px solid rgb(3, 112, 3);
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-new /* COMPLETE */ {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-new input /* COMPLETE */ {
+    text-align: center;
+}
+
+.new-instructions /* COMPLETE */ {
+    text-align: center;
+    font-weight: bold;
 }
