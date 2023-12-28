@@ -4,13 +4,18 @@
 
 <body>
     <%- include("./partials/nav.ejs") %>
-    <h1>Let us learn more about the <%= animal.species %>, it is most curious...</h1>
-    <h2><img src="<%= animal.imageLink %>"></h3>
-    <ul>
-        <li>Location: <%= animal.location %></li>
-        <li>Typical life expectancy: <%= animal.lifeExpectancy %> years</li>
-        <li><%= animal.extinct ? "Alas, it is no more" : "Phew, it's still around" %></li>
-    </ul>
+    <h1 class="show">Let us learn more about the <%= animal.species %>, it is most curious...</h1>
+    <div class="about-animal">
+        <h2><img src="<%= animal.imageLink %>" class="show-animal-image"></h2>
+        <ul class="show-animal-information">
+            <li>Location: <%= animal.location %></li>
+            <li>Typical life expectancy: <%= animal.lifeExpectancy %> years</li>
+            <li><%= animal.extinct ? "Alas, it is no more" : "Phew, it's still around" %></li>
+        </ul>
+    </div>
+
+    <div class="cta-edit">
     <a href="/animals/edit/<%= animal._id %>">Do you have updates on the <%= animal.species %>?</a>
+    </div>
 </body>
 </html>
